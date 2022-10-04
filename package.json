@@ -1,0 +1,38 @@
+{
+    "name": "fight-club",
+    "version": "1.0.0",
+    "description": "Fight club simulator",
+    "main": "changeme.js",
+    "scripts": {
+        "start": "ts-node src/index.ts",
+        "watch": "nodemon -e ts,json --exec \"yarn start\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/LizzieCamp/fight-club.git"
+    },
+    "keywords": [
+        "typescript",
+        "node"
+    ],
+    "author": "LizzieCamp",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/LizzieCamp/fight-club/issues"
+    },
+    "homepage": "https://github.com/LizzieCamp/fight-club#readme",
+    "devDependencies": {
+        "@types/node": "16.x",
+        "husky": "^8.0.1",
+        "lint-staged": "^13.0.3",
+        "nodemon": "^2.0.20",
+        "pino": "^8.6.1",
+        "pino-pretty": "^9.1.0",
+        "prettier": "^2.7.1",
+        "ts-node": "^10.9.1",
+        "typescript": "^4.8.3"
+    },
+    "lint-staged": {
+        "*": "prettier --write"
+    }
+}
