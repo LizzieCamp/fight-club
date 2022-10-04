@@ -1,0 +1,5 @@
+*.sh
+.*
+!.*.js
+node_modules
+yarn.lock
