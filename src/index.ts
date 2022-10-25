@@ -1,5 +1,8 @@
 import logger from './lib/logger';
+import { cli } from './cli/cli';
 
 const log = logger();
 
-log.info('hello');
+(async () => {
+    await cli(log);
+})();
