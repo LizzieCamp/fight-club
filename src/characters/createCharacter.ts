@@ -6,7 +6,7 @@ const createCharacter: CreateCharacter = (name, category) => {
     switch (category) {
         case 'lightweight':
             return {
-                name,
+                characterName: name,
                 category,
                 agility: 1.25,
                 hp: 75,
@@ -14,7 +14,7 @@ const createCharacter: CreateCharacter = (name, category) => {
             };
         case 'middleweight':
             return {
-                name,
+                characterName: name,
                 category,
                 agility: 1,
                 hp: 100,
@@ -23,7 +23,7 @@ const createCharacter: CreateCharacter = (name, category) => {
 
         case 'heavyweight':
             return {
-                name,
+                characterName: name,
                 category,
                 agility: 0.75,
                 hp: 125,

@@ -1,23 +1,24 @@
 export type CharacterCategory = 'lightweight' | 'middleweight' | 'heavyweight';
 
-type Lightweight = {
-    name: string; // name for character - api random name for them
+type BaseCharacter = {
+    characterName: string;
+};
+
+type Lightweight = BaseCharacter & {
     category: Extract<CharacterCategory, 'lightweight'>;
     agility: 1.25; // dodge/attack rate
     hp: 75;
     damage: 10;
 };
 
-type Middleweight = {
-    name: string; // name for character - api random name for them
+type Middleweight = BaseCharacter & {
     category: Extract<CharacterCategory, 'middleweight'>;
     agility: 1; // dodge/attack rate
     hp: 100;
     damage: 15;
 };
 
-type Heavyweight = {
-    name: string; // name for character - api random name for them
+type Heavyweight = BaseCharacter & {
     category: Extract<CharacterCategory, 'heavyweight'>;
     agility: 0.75; // dodge/attack rate
     hp: 125;
