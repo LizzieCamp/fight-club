@@ -6,7 +6,7 @@ test.each([
         name: 'light',
         category: 'lightweight',
         expected: {
-            characterName: 'light',
+            characterName: 'Light',
             category: 'lightweight',
             agility: 1.25,
             hp: 75,
@@ -17,7 +17,7 @@ test.each([
         name: 'middle',
         category: 'middleweight',
         expected: {
-            characterName: 'middle',
+            characterName: 'Middle',
             category: 'middleweight',
             agility: 1,
             hp: 100,
@@ -28,7 +28,7 @@ test.each([
         name: 'heavy',
         category: 'heavyweight',
         expected: {
-            characterName: 'heavy',
+            characterName: 'Heavy',
             category: 'heavyweight',
             agility: 0.75,
             hp: 125,

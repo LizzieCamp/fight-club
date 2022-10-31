@@ -1,8 +1,10 @@
+import { capitalise } from '../lib/capitalise';
 import { Character, CharacterCategory } from './types';
 
 type CreateCharacter = (name: string, category: CharacterCategory) => Character;
 
 const createCharacter: CreateCharacter = (name, category) => {
+    name = capitalise(name);
     switch (category) {
         case 'lightweight':
             return {
