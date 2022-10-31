@@ -2,20 +2,13 @@ import { Logger } from 'pino';
 import * as prompts from 'prompts';
 import createCharacter from '../characters/createCharacter';
 import { CharacterCategory } from '../characters/types';
+import { rando } from '../lib/randomNumber';
 
 type CategoriesList = CharacterCategory[];
 
 const categories: CategoriesList = ['heavyweight', 'lightweight', 'middleweight'];
 
-export const rando = (categories: CategoriesList) => {
-    const number = Math.floor(Math.random() * categories.length);
-    return categories[number];
-};
-
-console.log(categories);
-
 export const cli = async (log: Logger) => {
-    console.log(rando(categories));
     const response = await prompts([
         {
             type: 'text',
@@ -34,12 +27,9 @@ export const cli = async (log: Logger) => {
         },
     ]);
 
-    const chosenCharacterName =
-        response.characterName.charAt(0).toUpperCase() +
-        response.characterName.slice(1).toLowerCase();
-    const character = createCharacter(chosenCharacterName, response.category);
+    const character = createCharacter(response.characterName, response.category);
 
-    const opponent = createCharacter('charlie', rando(categories));
+    const opponent = createCharacter('charlie', categories[rando(categories.length)]);
     log.info(opponent);
     log.info(character);
 };
