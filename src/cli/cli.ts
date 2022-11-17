@@ -3,6 +3,7 @@ import * as prompts from 'prompts';
 import createCharacter from '../characters/createCharacter';
 import { CharacterCategory } from '../characters/types';
 import { rando } from '../lib/randomNumber';
+import { run } from '../tick/tick';
 
 type CategoriesList = CharacterCategory[];
 
@@ -32,4 +33,11 @@ export const cli = async (log: Logger) => {
     const opponent = createCharacter('charlie', categories[rando(categories.length)]);
     log.info(opponent);
     log.info(character);
+
+    run(log, 500, [character, opponent]);
 };
+
+
+//agility is chance of dodging - have a dodge cooldown too - dodge logic - percentage change to dodge - percentage chance of hitting
+// set up thing incase for draw
+// tracking more stuff in state - evade(dodge)cooldown 

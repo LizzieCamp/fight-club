@@ -7,9 +7,8 @@ test.each([
         category: 'lightweight',
         expected: {
             characterName: 'Light',
-            category: 'lightweight',
-            agility: 1.25,
-            hp: 75,
+            attackCooldown: 8,
+            maxHP: 75,
             damage: 10,
         },
     },
@@ -18,9 +17,8 @@ test.each([
         category: 'middleweight',
         expected: {
             characterName: 'Middle',
-            category: 'middleweight',
-            agility: 1,
-            hp: 100,
+            attackCooldown: 10,
+            maxHP: 100,
             damage: 15,
         },
     },
@@ -29,9 +27,8 @@ test.each([
         category: 'heavyweight',
         expected: {
             characterName: 'Heavy',
-            category: 'heavyweight',
-            agility: 0.75,
-            hp: 125,
+            attackCooldown: 13,
+            maxHP: 125,
             damage: 20,
         },
     }
