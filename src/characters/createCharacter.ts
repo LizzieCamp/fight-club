@@ -12,6 +12,8 @@ const createCharacter: CreateCharacter = (name, category) => {
                 attackCooldown: 8,
                 maxHP: 75,
                 damage: 10,
+                dodgeCooldown: 5,
+                agility: 12,
             };
         case 'middleweight':
             return {
@@ -19,6 +21,8 @@ const createCharacter: CreateCharacter = (name, category) => {
                 attackCooldown: 10,
                 maxHP: 100,
                 damage: 15,
+                dodgeCooldown: 7,
+                agility: 8,
             };
 
         case 'heavyweight':
@@ -27,6 +31,8 @@ const createCharacter: CreateCharacter = (name, category) => {
                 attackCooldown: 13,
                 maxHP: 125,
                 damage: 20,
+                dodgeCooldown: 10,
+                agility: 4,
             };
     }
 };

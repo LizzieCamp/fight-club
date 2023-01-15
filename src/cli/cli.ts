@@ -30,14 +30,23 @@ export const cli = async (log: Logger) => {
 
     const character = createCharacter(response.characterName, response.category);
 
-    const opponent = createCharacter('charlie', categories[rando(categories.length)]);
-    log.info(opponent);
-    log.info(character);
+    const opponentCategory = categories[rando(categories.length)];
+
+    const opponent = createCharacter('Bill', opponentCategory);
+    log.info(
+        character.characterName +
+            '(' +
+            response.category +
+            ') vs ' +
+            opponent.characterName +
+            '(' +
+            opponentCategory +
+            ')'
+    );
+    log.info('ROUND 1 BEGINS!');
 
     run(log, 500, [character, opponent]);
 };
 
-
 //agility is chance of dodging - have a dodge cooldown too - dodge logic - percentage change to dodge - percentage chance of hitting
-// set up thing incase for draw
-// tracking more stuff in state - evade(dodge)cooldown 
+// tracking more stuff in state - evade(dodge)cooldown
