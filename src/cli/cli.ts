@@ -3,13 +3,13 @@ import * as prompts from 'prompts';
 import createCharacter from '../characters/createCharacter';
 import { CharacterCategory } from '../characters/types';
 import { rando } from '../lib/randomNumber';
-import { run } from '../tick/tick';
+import { StartFight } from '../tick/types';
 
 type CategoriesList = CharacterCategory[];
 
 const categories: CategoriesList = ['heavyweight', 'lightweight', 'middleweight'];
 
-export const cli = async (log: Logger) => {
+export const cli = (log: Logger, run: StartFight) => async () => {
     const response = await prompts([
         {
             type: 'text',
@@ -30,14 +30,20 @@ export const cli = async (log: Logger) => {
 
     const character = createCharacter(response.characterName, response.category);
 
-    const opponent = createCharacter('charlie', categories[rando(categories.length)]);
-    log.info(opponent);
-    log.info(character);
+    const opponentCategory = categories[rando(categories.length)];
 
-    run(log, 500, [character, opponent]);
+    const opponent = createCharacter('Bill', opponentCategory);
+    log.info(
+        character.characterName +
+            '(' +
+            response.category +
+            ') vs ' +
+            opponent.characterName +
+            '(' +
+            opponentCategory +
+            ')'
+    );
+    log.info('ROUND 1 BEGINS!');
+
+    run([character, opponent]);
 };
-
-
-//agility is chance of dodging - have a dodge cooldown too - dodge logic - percentage change to dodge - percentage chance of hitting
-// set up thing incase for draw
-// tracking more stuff in state - evade(dodge)cooldown 
