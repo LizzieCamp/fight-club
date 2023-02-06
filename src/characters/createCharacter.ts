@@ -1,6 +1,7 @@
 import { capitalise } from '../lib/capitalise';
 import { CharacterAttributes, CharacterCategory } from './types';
 
+// Add me to ./types
 type CreateCharacter = (name: string, category: CharacterCategory) => CharacterAttributes;
 
 const createCharacter: CreateCharacter = (name, category) => {

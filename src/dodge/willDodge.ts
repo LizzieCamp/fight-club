@@ -1,4 +1,4 @@
-import { GameState } from "../tick/tick";
+import { GameState } from '../tick/types';
 
 export const willDodge = (state: GameState, defendent, newState) => {
     if (defendent.canDodge === false) {
@@ -6,4 +6,4 @@ export const willDodge = (state: GameState, defendent, newState) => {
             newState.canDodge = true;
         }
     }
-}
+};

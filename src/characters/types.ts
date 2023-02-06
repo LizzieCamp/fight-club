@@ -1,3 +1,5 @@
+import { GameState } from "../tick/types";
+
 export type CharacterCategory = 'lightweight' | 'middleweight' | 'heavyweight';
 
 type BaseCharacter = {
@@ -30,4 +32,4 @@ type Heavyweight = BaseCharacter & {
 
 export type CharacterAttributes = Lightweight | Middleweight | Heavyweight;
 
-
+export type StateUpdater = (state: Readonly<GameState>) => GameState;
